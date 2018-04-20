@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+  <meta charset="UTF-8">
+  <head>
+    <title>DMG</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui" />
+    <link rel='stylesheet' id='style2-css' href='css/style.css' type='text/css' media='all' />
+    <script type='text/javascript' src='js/jquery.js'></script>
+    <script type='text/javascript' src='js/jquery.mousewheel.min.js'></script>
+    <style>
+html {
+  overflow-x: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+
+a {
+  text-decoration: none;
+  padding: 0;
+  margin: 0; }
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+li {
+  margin: 0;
+  padding: 0; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+img {
+  border: none;
+  margin: 0;
+  padding: 0; }
+
+p {
+  margin: 0;
+  padding: 0; }
+
+input, textarea, select, button {
+  outline: none;
+  border: none;
+  margin: 0;
+  padding: 0; }
+
+dd, dt, dl {
+  margin: 0;
+  padding: 0; }
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal; }
+    .slider_dots {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  z-index: 99;
+  -webkit-transform: translate(0%, -50%);
+  -moz-transform: translate(0%, -50%);
+  -ms-transform: translate(0%, -50%);
+  -o-transform: translate(0%, -50%);
+  transform: translate(0%, -50%); }
+
+.slider_dots {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  z-index: 99;
+  -webkit-transform: translate(0%, -50%);
+  -moz-transform: translate(0%, -50%);
+  -ms-transform: translate(0%, -50%);
+  -o-transform: translate(0%, -50%);
+  transform: translate(0%, -50%); }
+  @media (max-width: 1023px) {
+    .slider_dots {
+      display: none; } }
+
+.slider_dots li {
+  margin-bottom: 4px;
+  width: 36px;
+  height: 6px;
+  padding-top: 4px;
+  cursor: pointer; }
+
+.slider_dots li button {
+  display: block;
+  width: 18px;
+  height: 2px;
+  cursor: pointer;
+  background: #000;
+  opacity: 0.2;
+  transition: All 0.3s ease-in-out;
+  -webkit-transition: All 0.3s ease-in-out;
+  -moz-transition: All 0.3s ease-in-out;
+  -o-transition: All 0.3s ease-in-out; }
+
+.slider_dots li:hover button {
+  background: #fff;
+  opacity: 1; }
+
+.slider_dots li.dot_active button {
+  background: #fff;
+  width: 36px;
+  opacity: 1;
+  z-index: 99;
+  -webkit-transform: translate(0%, -50%);
+  -moz-transform: translate(0%, -50%);
+  -ms-transform: translate(0%, -50%);
+  -o-transform: translate(0%, -50%);
+  transform: translate(0%, -50%); }
+.m_slider {
+  width: 100%;
+  min-height: 0;
+  overflow: hidden;
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  left: -200%; }
+
+.m_slider.s_active {
+  opacity: 1;
+  position: relative;
+  height: auto;
+  min-height: 100%;
+  left: 0; }
+
+.m_slider_before_bg {
+  width: 50%;
+  height: 100vh;
+  position: absolute;
+  z-index: 4;
+  left: 0;
+  top: 0; }
+
+.m_slider_bg {
+  width: 50%;
+  height: 100vh;
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  top: 0; }
+
+.slider_bg_box {
+  width: 200%;
+  height: 100vh;
+  position: absolute;
+  z-index: 5;
+  left: 0;
+  top: 0;
+  mix-blend-mode: multiply; }
+
+.m_slider.s_active .slider_bg_box {
+  animation: b_t_move .4s forwards  ease-in;
+  -moz-animation: b_t_move 0.4s forwards ease-in;
+  -webkit-animation: b_t_move .4s forwards  ease-in;
+  -o-animation: b_t_move .4s forwards ease-in; }
+
+@keyframes b_t_move {
+  0% {
+    left: 0%; }
+  100% {
+    left: -100%; } }
+@-webkit-keyframes b_t_move {
+  0% {
+    left: 0%; }
+  100% {
+    left: -100%; } }
+@-o-keyframes b_t_move {
+  0% {
+    left: 0%; }
+  100% {
+    left: -100%; } }
+@-moz-keyframes b_t_move {
+  0% {
+    left: 0%; }
+  100% {
+    left: -100%; } }
+@keyframes b_t_move2 {
+  0% {
+    left: 0%; }
+  100% {
+    left: -100%; } }
+@-webkit-keyframes b_t_move2 {
+  0% {
+    left: 0%; }
+  100% {
+    left: -100%; } }
+@-o-keyframes b_t_move2 {
+  0% {
+    left: 0%; }
+  100% {
+    left: -100%; } }
+@-moz-keyframes b_t_move2 {
+  0% {
+    left: 0%; }
+  100% {
+    left: -100%; } }
+.content_main {
+  font-size: 50px;
+  position: relative;
+  z-index: 98;
+  opacity: 0; }
+
+.fullpage_box {
+  width: 100%;
+  height: 100vh;
+  position: relative; }
+
+    </style>
+  </head>
+  <body class="home page-template-default page page-id-4">
+    <!-- 滚动条对应远点显示 -->
+    <ul class="slider_dots"></ul>
+    <div class="content m_slider s_active">
+      <div class="slider_bg_box">
+        <div class="m_slider_bg" style="background:rgb(158,158,74)"></div>
+        <div class="m_slider_before_bg"></div>
+      </div>
+      <div class="content_main">
+        <div class="fullpage_box scrollpage last_page  " style=" ">
+        </div>
+      </div>
+    </div>
+    <div class="content m_slider ">
+      <div class="slider_bg_box">
+        <div class="m_slider_bg" style="background:rgb(147,94,165)"></div>
+        <div class="m_slider_before_bg"></div>
+      </div>
+      <div class="content_main">
+        <div class="fullpage_box scrollpage  first_page has_bg" style=" ">
+        </div>
+        <div class="down_fullpage scrollpage last_page  has_bg" style=" ">
+        </div>
+      </div>
+    </div>
+       <div class="content m_slider ">
+      <div class="slider_bg_box">
+        <div class="m_slider_bg" style="background:rgb(147,94,165)"></div>
+        <div class="m_slider_before_bg"></div>
+      </div>
+
+      <!--fullpage_box当前框架第一屏，down_fullpage当前框架第二屏，first_page滚动条上滑，last_page滚动条下滑 -->
+      <div class="content_main">
+        <div class="fullpage_box scrollpage  first_page last_page" style=" ">
+        </div>
+      </div>
+    </div>
+    <script type='text/javascript' src='js/script.js'></script>
+  </body>
+</html>
